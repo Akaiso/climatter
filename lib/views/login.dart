@@ -17,6 +17,7 @@ class _LogInState extends State<LogIn> {
   final _auth = FirebaseAuth.instance;
   var email;
   var password;
+  var isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class _LogInState extends State<LogIn> {
                   color: Colors.lightBlue.shade700,
                 ),
                 decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.only(top: 2.0, left: 30.0),
+                  contentPadding: EdgeInsets.only(top: 2.0),
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -65,7 +66,7 @@ class _LogInState extends State<LogIn> {
                 color: Colors.lightBlue.shade700,
               ),
               decoration: const InputDecoration(
-                contentPadding: EdgeInsets.only(top: 2.0, left: 30.0),
+                contentPadding: EdgeInsets.only(top: 2.0, ),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -96,20 +97,22 @@ class _LogInState extends State<LogIn> {
                 InkWell(
                   onTap: () async {
                     try {
-                      final user = await _auth.signInWithEmailAndPassword(
-                          email: email, password: password);
+                      final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
                       if (user != null) {
+                        // isLoading = true;
+                        // isLoading? const Center(
+                        //     child:CircularProgressIndicator()):
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>  HomePage( yourNameLastBustop: widget.yourName, emailC:emailController.text, passwordC:passwordController.text),
+                              builder: (context) =>  HomePage(yourNameLastBustop: widget.yourName, emailC:emailController.text, passwordC:passwordController.text),
                             ));
                       }
                     } catch (e) {
                       rethrow;
                     }
-                     emailController.clear();
-                     passwordController.clear();
+                    // emailController.clear();
+                   //  passwordController.clear();
                    // emailController.dispose();
                    // passwordController.dispose();
                   },

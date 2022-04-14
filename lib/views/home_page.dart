@@ -192,7 +192,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 50.0),
               Container(height: 3.0, width: 300, color: Colors.white12),
               const SizedBox(height: 30.0),
-              const Text('TO KNOW YOUR LOCATION\'S WEATHER',
+              const Text('Get weather info for your location',
                   style: TextStyle(
                       fontSize: 10.0,
                       fontWeight: FontWeight.w900,

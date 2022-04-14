@@ -40,7 +40,7 @@ class _SignUpState extends State<SignUp> {
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.lightBlue.shade700),
                 decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.only(top: 2.0, left: 30.0),
+                  contentPadding: EdgeInsets.only(top: 2.0),
                   filled: true,
                   fillColor: Colors.white,
                   hintText: 'name',
@@ -64,7 +64,7 @@ class _SignUpState extends State<SignUp> {
                   color: Colors.lightBlue.shade700,
                 ),
                 decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.only(top: 2.0, left: 30.0),
+                  contentPadding: EdgeInsets.only(top: 2.0),
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -87,7 +87,7 @@ class _SignUpState extends State<SignUp> {
                 color: Colors.lightBlue.shade700,
               ),
               decoration: const InputDecoration(
-                contentPadding: EdgeInsets.only(top: 2.0, left: 30.0),
+                contentPadding: EdgeInsets.only(top: 2.0),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
