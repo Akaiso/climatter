@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.yourNameLastBustop, required this.emailC, required this.passwordC })
+  const HomePage({Key? key, required this.yourNameLastBustop, required this.emailC, required this.passwordC})
       : super(key: key);
   final String yourNameLastBustop;
   final emailC;
@@ -74,6 +74,14 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Future<void> signedOut()async{
+    await sOut.signOut();
+
+ }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,11 +90,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         actions: [
           InkWell(
-              onTap: () {
-                sOut.signOut();
-                Navigator.pop(context);
-
-
+              onTap: () async{
+                await signedOut();
+                 Navigator.pop(context,);
               },
               child: const Icon(Icons.close)),
           const SizedBox(width: 20.0),
